@@ -1,5 +1,8 @@
 'use strict';
 
+var fireballSize = 22;
+var wizardWidth = 70;
+var wizardSpeed = 3;
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
@@ -9,6 +12,22 @@ var COLUMN_GAP = 50;
 var FONT_GAP = 40;
 var BAR_WIDTH = 40;
 var BAR_HEIGHT = 150;
+
+var getFireballSpeed = function (isMovingLeft) {
+  return isMovingLeft ? 2 : 5;
+}
+
+var getWizardHeight = function () {
+  return 1.337 * wizardWidth;
+}
+
+var getWizardX = function (gameFieldWidth) {
+  return (gameFieldWidth - wizardWidth) / 2;
+}
+
+var getWizardY = function (gameFieldHeight) {
+  return (gameFieldHeight / 3) - getWizardHeight();
+}
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
