@@ -57,5 +57,4 @@ const generateElements = function () {
   similarListElement.appendChild(fragment);
 };
 
-
 generateElements();
