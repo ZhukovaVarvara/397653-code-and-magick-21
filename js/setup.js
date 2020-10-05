@@ -12,11 +12,12 @@ const similarWizardTemplate = document.querySelector(`#similar-wizard-template`)
 const setupOpen = document.querySelector(`.setup-open`);
 const setup = document.querySelector(`.setup`);
 const setupClose = setup.querySelector(`.setup-close`);
-const setupUserName = setup.querySelector(`.setup-user-name`);
 const wizardCoat = setup.querySelector(`.setup-wizard .wizard-coat`);
 const wizardEyes = setup.querySelector(`.setup-wizard .wizard-eyes`);
 const wizardFireball = setup.querySelector(`.setup-fireball-wrap`);
 let wizards = [];
+
+userSimilar.classList.remove(`hidden`);
 
 const openPopup = function () {
   setup.classList.remove(`hidden`);
