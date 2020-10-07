@@ -40,9 +40,7 @@ const onPopupEscPress = function (evt) {
   }
 };
 
-setupOpen.addEventListener(`click`, function () {
-  openPopup();
-});
+setupOpen.addEventListener(`click`, openPopup);
 
 setupOpen.addEventListener(`keydown`, function (evt) {
   if (evt.key === `Enter`) {
@@ -50,9 +48,7 @@ setupOpen.addEventListener(`keydown`, function (evt) {
   }
 });
 
-setupClose.addEventListener(`click`, function () {
-  closePopup();
-});
+setupClose.addEventListener(`click`, closePopup);
 
 setupClose.addEventListener(`keydown`, function (evt) {
   if (evt.key === `Enter`) {
