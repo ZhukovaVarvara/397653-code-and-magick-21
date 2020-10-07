@@ -12,6 +12,10 @@ const similarWizardTemplate = document.querySelector(`#similar-wizard-template`)
 const setupOpen = document.querySelector(`.setup-open`);
 const setup = document.querySelector(`.setup`);
 const setupClose = setup.querySelector(`.setup-close`);
+const setupUserName = setup.querySelector(`.setup-user-name`);
+const coatColorInput = setup.querySelector(`input[name=coat-color]`);
+const eyesColorInput = setup.querySelector(`input[name=eyes-color]`);
+const fireballColorInput = setup.querySelector(`input[name=fireball-color]`);
 const wizardCoat = setup.querySelector(`.setup-wizard .wizard-coat`);
 const wizardEyes = setup.querySelector(`.setup-wizard .wizard-eyes`);
 const wizardFireball = setup.querySelector(`.setup-fireball-wrap`);
@@ -30,7 +34,7 @@ const closePopup = function () {
 };
 
 const onPopupEscPress = function (evt) {
-  if (evt.key === `Escape`) {
+  if (evt.key === `Escape` && document.activeElement !== setupUserName) {
     evt.preventDefault();
     closePopup();
   }
@@ -58,14 +62,17 @@ setupClose.addEventListener(`keydown`, function (evt) {
 
 wizardCoat.addEventListener(`click`, function () {
   wizardCoat.style.fill = randomArrayItem(COAT_COLORS);
+  coatColorInput.value = wizardCoat.style.fill;
 });
 
 wizardEyes.addEventListener(`click`, function () {
   wizardEyes.style.fill = randomArrayItem(EYES_COLORS);
+  eyesColorInput.value = wizardEyes.style.fill;
 });
 
 wizardFireball.addEventListener(`click`, function () {
   wizardFireball.style.background = randomArrayItem(FIREBALLS_COLORS);
+  fireballColorInput.value = wizardFireball.style.background;
 });
 
 const randomInteger = function (min, max) {
